@@ -12,20 +12,19 @@ td{ border:1px solid gray; padding: 3px; }
 <body>
 
 <table>
+ <tr>
 <%
-for (int i=1; i <= 9; ++i) { 
-    out.println("  <tr>");
-    for (int j=2; j <= 9; ++j) {
-        out.println("<td>");
-        out.print(j+"x"+i);
+for (int i=2; i <= 9; ++i) {
+	 out.println("  <td>");
+    for (int j=1; j <= 9; ++j) {
+        
+        out.print(i+"x"+j);
         out.print("=");
-        out.print(i*j);
-        out.println("</td>");
+        out.print(i*j+"<br>");
     }
-    out.println("  </tr>");
-  }
-%>
-</tr>
+        out.println("  </td>");} %>
+    </tr>
+
 </table>
 
 </body>
