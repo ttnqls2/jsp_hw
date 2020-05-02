@@ -34,7 +34,7 @@ List<User> list = UserDAO2.findByName(srchText);
 <table class="table table-bordered table-condensed">
     <thead>
         <tr>
-          
+            <th>사용자아이디</th>
             <th>이름</th>
             <th>이메일</th>
             <th>학과</th>
@@ -44,7 +44,7 @@ List<User> list = UserDAO2.findByName(srchText);
     <tbody>
         <% for (User user : list) { %>
             <tr>
-          
+                <td><%= user.getUserid() %></td>
                 <td><%= user.getName() %></td>
                 <td><%= user.getEmail() %></td>
                 <td><%= user.getDepartmentName() %></td>
