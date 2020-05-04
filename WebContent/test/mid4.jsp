@@ -10,12 +10,12 @@
 
         name = request.getParameter("name");
         String r = request.getParameter("sex");
-        int sex = Integer.parseInt(r);
+      
         
 
         if (name == null || name.length() == 0) 
             에러메시지 = " 이름을 입력하세요";
-        else if (r == null || radio == 0) 
+        else if (r == null || sex == 0) 
             에러메시지 = "성별을 입력하세요";
 
     }
@@ -27,9 +27,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style> body { font-family: 굴림체; font-size: 10pt; }
-  div.container { width: 400px; margin: 20px auto; }
+
   form, form div { margin-bottom: 20px; }
-  label { display: block; }   </style>
+  label { display: block; } 
+   div.error { margin: 10px; padding: 10px 20px; background-color: #fdd; border: 1px solid #faa; }
+  table { border-collapse : collapse; }
+  td { border : 1px solid; padding : 3px; width: 100px; }  </style>
 </head>
 <body>
 <div class="container">
@@ -44,8 +47,8 @@
 
 
   <div>
-    <label>학과</label>
-    <input type = "radio"  name="sex" value = "남자">남자</input>
+    <label>성별</label>
+    <input type = "radio"  name="sex" value = "남자">남자</input><br />
         <input type = "radio"  name="sex" value = "여자">여자</input>
 
   </div>
