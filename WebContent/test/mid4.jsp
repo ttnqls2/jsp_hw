@@ -2,20 +2,21 @@
     pageEncoding="UTF-8"%>
     <%
     String name = "";
-    int radio = 0;
+    int s = 0;
     String 에러메시지 = null;
     
     request.setCharacterEncoding("UTF-8");
     if (request.getMethod().equals("POST")) {
 
         name = request.getParameter("name");
-        String r = request.getParameter("sex");
+        String s = request.getParameter("sex");
+        int sex = Integer.parseInt(s);
       
         
 
         if (name == null || name.length() == 0) 
             에러메시지 = " 이름을 입력하세요";
-        else if (r == null || sex == 0) 
+        else if (s == null || sex == 0) 
             에러메시지 = "성별을 입력하세요";
 
     }
