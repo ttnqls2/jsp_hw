@@ -14,8 +14,9 @@ public class BookDAO {
     private static Book getBookFrom(ResultSet resultSet) throws SQLException {
     	 Book book = new Book();
     	 book.setId(resultSet.getInt("id"));
-    	 book.setBook(resultSet.getString("book"));
-    	 book.setName(resultSet.getString("name"));
+    	 book.setTitle(resultSet.getString("book"));
+    	 book.setAuthor(resultSet.getString("name"));
+    	 book.setCategoryId(resultSet.getInt("categoryid"));
     	 book.setCategory(resultSet.getString("category"));
     	 book.setPrice(resultSet.getInt("price"));
     	 book.setPublisher(resultSet.getString("publisher"));
@@ -24,7 +25,7 @@ public class BookDAO {
     }
 
     public static List<Book> findAll() throws Exception {
-    	String sql = "SELECT b.*, c.categoryName " +
+    	String sql = "SELECT b.*, c.categoryId " +
                 "FROM book b LEFT JOIN category c ON c.categoryid = c.id";
    try (Connection connection = DB.getConnection("book");
         PreparedStatement statement = connection.prepareStatement(sql);

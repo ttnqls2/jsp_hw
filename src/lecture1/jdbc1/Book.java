@@ -2,9 +2,10 @@ package lecture1.jdbc1;
 
 public class Book {
     int id;
-    String book;
-    String name;
+    String title;
+    String author;
     String category;
+    int categoryid;
     int price;
     String publisher;
 
@@ -15,23 +16,29 @@ public class Book {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getBook() {
-		return book;
+	public String getTitle() {
+		return title;
 	}
-	public void setBook(String book) {
-		this.book = book;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getName() {
-		return name;
+	public String getAuthor() {
+		return author;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 	public String getCategory() {
 		return category;
 	}
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	public int getCategoryId() {
+		return categoryid;
+	}
+	public void setCategoryId(int categoryid) {
+		this.categoryid = categoryid;
 	}
 	public int getPrice() {
 		return price;
