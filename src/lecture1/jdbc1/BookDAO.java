@@ -17,7 +17,6 @@ public class BookDAO {
     	 book.setTitle(resultSet.getString("book"));
     	 book.setAuthor(resultSet.getString("name"));
     	 book.setCategoryId(resultSet.getInt("categoryid"));
-    	 book.setCategory(resultSet.getString("category"));
     	 book.setPrice(resultSet.getInt("price"));
     	 book.setPublisher(resultSet.getString("publisher"));
 
@@ -25,8 +24,8 @@ public class BookDAO {
     }
 
     public static List<Book> findAll() throws Exception {
-    	String sql = "SELECT b.*, c.categoryId " +
-                "FROM book b LEFT JOIN category c ON c.categoryid = c.id";
+    	String sql = "SELECT b.* " +
+                "FROM book b LEFT JOIN categoryid c ON c.categoryid = c.id";
    try (Connection connection = DB.getConnection("book");
         PreparedStatement statement = connection.prepareStatement(sql);
         ResultSet resultSet = statement.executeQuery()) {
@@ -37,12 +36,12 @@ public class BookDAO {
     }
     }
     public static List<Book> findByName(String name) throws Exception {
-    	String sql = "SELECT b.*, c.categoryName " +
+    	String sql = "SELECT b.* " +
                 "FROM book b LEFT JOIN category c ON c.categoryid = c.id "
-    			 + "WHERE b.name LIKE ?";
+    			 + "WHERE b.author LIKE ?";
    try (Connection connection = DB.getConnection("book");
         PreparedStatement statement = connection.prepareStatement(sql)) {
-	   statement.setString(1, name + "%");
+	   statement.setString(1, author + "%");
 
         try (ResultSet resultSet = statement.executeQuery()) {
        ArrayList<Book> list = new ArrayList<Book>();

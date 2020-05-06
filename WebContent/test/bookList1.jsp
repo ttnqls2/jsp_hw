@@ -57,9 +57,9 @@ input { padding : 5px; }
 				%>
 				<tr>
 					<td><%=book.getId()%></td>
-					<td><%=book.getBook()%></td>
-					<td><%=book.getName()%></td>
-					<td><%=book.getCategory()%></td>
+					<td><%=book.getTitle()%></td>
+					<td><%=book.getAuthor()%></td>
+					<td><%=book.getCategoryId()%></td>
 					<td><%=book.getPrice()%></td>
 					<td><%=book.getPublisher()%></td>
 				</tr>

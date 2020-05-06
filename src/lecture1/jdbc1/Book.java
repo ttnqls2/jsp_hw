@@ -4,7 +4,6 @@ public class Book {
     int id;
     String title;
     String author;
-    String category;
     int categoryid;
     int price;
     String publisher;
@@ -28,12 +27,7 @@ public class Book {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
+
 	public int getCategoryId() {
 		return categoryid;
 	}
